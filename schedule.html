@@ -13,6 +13,45 @@
             background-color: #000; /* Black background */
             color: #fff; /* White text */
         }
+        .navbar {
+        background: rgba(0, 0, 0, 0.8);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+
+    .navbar .logo-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
+
+    .navbar .nav-menu {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .navbar .nav-menu li {
+        margin: 0;
+    }
+
+    .navbar .nav-menu li a {
+        color: #f3e9ff;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1rem;
+        transition: color 0.3s;
+    }
+
+    .navbar .nav-menu li a:hover {
+        color: #fbcaff;
+    }
 
         header {
             text-align: center;
@@ -87,20 +126,19 @@
     <header class="navbar">
         <a href="/index.html" class="logo-text">THREAT HUNTING VILLAGE</a>
         <ul class="nav-menu">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/schedule.html">Schedule</a></li>
-            <li><a href="/ctf.html">CTF</a></li>
-            <li><a href="/blogs.html">Blogs</a></li>
-            <li><a href="/about.html">About</a></li>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/schedule.html">Schedule</a></li>
+          <li><a href="/ctf.html">CTF</a></li>
+          <li><a href="/blogs.html">Blogs</a></li>
+          <li><a href="/about.html">About</a></li>
         </ul>
-    </header>
+      </header>
     <header>
         <h1>Schedule</h1>
     </header>
 
     <section class="main-content">
-        <!-- 20 February -->
-        <div class="schedule-card">
+x1`        <div class="schedule-card">
             <h2>20 February</h2>
             <div class="event-card">
                 <h3>Opening Keynote</h3>
