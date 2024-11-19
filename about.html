@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Profile Cards</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a0a0a;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation Bar */
+        header.navbar {
+            background: rgba(0, 0, 0, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .navbar .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .navbar .nav-menu li {
+            margin: 0;
+        }
+
+        .navbar .nav-menu li a {
+            color: #f3e9ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-menu li a:hover {
+            color: #06c6f5;
+        }
+
+        .about {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+            color: white;
+        }
+
+        .about h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .about p {
+            width: 70%;
+            margin: 0.5rem 0 0;
+            font-size: 1.1rem;
+        }
+
+        .our-team {
+            text-align: center;
+            color: white;
+        }
+
+        .our-team h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        .card {
+            background-color: #2b2b2b87;
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            width: 250px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 1.5rem;
+            box-sizing: border-box;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid #e0e0e0;
+        }
+
+        .name {
+            font-size: 1.2rem;
+            color: #06c6f5;
+            margin: 0.5rem 0;
+        }
+
+        .role {
+            font-size: 0.95rem;
+            color: #d9d9d9;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .social-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f1f1f1;
+            border-radius: 50%;
+            text-decoration: none;
+            color: #6b4ce5;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: #06c6f5;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <a href="/index.html" class="logo-text">THREAT HUNTING VILLAGE</a>
+        <ul class="nav-menu">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/schedule.html">Schedule</a></li>
+            <li><a href="/ctf.html">CTF</a></li>
+            <li><a href="/blogs.html">Blogs</a></li>
+            <li><a href="/about.html">About</a></li>
+        </ul>
+    </header>
+
+    <!-- About Section -->
+    <header class="about">
+        <h1>About Us</h1>
+        <p>The Threat Hunting Village is a community-focused initiative designed to bring together cybersecurity professionals and enthusiasts. Our mission is to empower individuals with the knowledge and skills to proactively defend against cyber threats.</p>
+    </header>
+
+    <!-- Our Team Section -->
+    <header class="our-team">
+        <h1>Our Team</h1>
+    </header>
+
+    <!-- Team Cards -->
+    <section class="card-container">
+      <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img">
+          <h3 class="name">John Doe</h3>
+          <p class="role">Lead Threat Hunter</p>
+          <div class="social-links">
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">🌐</a>
+          </div>
+      </div>
+
+      <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img">
+          <h3 class="name">Jane Smith</h3>
+          <p class="role">Cybersecurity Analyst</p>
+          <div class="social-links">
+              <a href="#" class="social-icon">🌐</a>
+              <a href="#" class="social-icon">🔗</a>
+          </div>
+      </div>
+
+      <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img">
+          <h3 class="name">Mike Brown</h3>
+          <p class="role">Incident Response Expert</p>
+          <div class="social-links">
+              <a href="#" class="social-icon">🌐</a>
+              <a href="#" class="social-icon">🔗</a>
+          </div>
+      </div>
+
+      <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img">
+          <h3 class="name">Emily White</h3>
+          <p class="role">Red Team Specialist</p>
+          <div class="social-links">
+              <a href="#" class="social-icon">🌐</a>
+              <a href="#" class="social-icon">🔗</a>
+          </div>
+      </div>
+
+      <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img">
+          <h3 class="name">Alice Green</h3>
+          <p class="role">Malware Analyst</p>
+          <div class="social-links">
+              <a href="#" class="social-icon">🌐</a>
+              <a href="#" class="social-icon">🔗</a>
+          </div>
+      </div>
+
+      <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img">
+          <h3 class="name">Tom Wilson</h3>
+          <p class="role">Blue Team Operator</p>
+          <div class="social-links">
+              <a href="#" class="social-icon">🌐</a>
+              <a href="#" class="social-icon">🔗</a>
+          </div>
+      </div>
+
+      <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img">
+          <h3 class="name">Sara Davis</h3>
+          <p class="role">Security Researcher</p>
+          <div class="social-links">
+              <a href="#" class="social-icon">🌐</a>
+              <a href="#" class="social-icon">🔗</a>
+          </div>
+      </div>
+
+      <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img">
+          <h3 class="name">Chris Lee</h3>
+          <p class="role">Forensic Expert</p>
+          <div class="social-links">
+              <a href="#" class="social-icon">🌐</a>
+              <a href="#" class="social-icon">🔗</a>
+          </div>
+      </div>
+
+      <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img">
+          <h3 class="name">Kim Taylor</h3>
+          <p class="role">DevSecOps Specialist</p>
+          <div class="social-links">
+              <a href="#" class="social-icon">🌐</a>
+              <a href="#" class="social-icon">🔗</a>
+          </div>
+      </div>
+
+      <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img">
+          <h3 class="name">Sam Harris</h3>
+          <p class="role">Cloud Security Engineer</p>
+          <div class="social-links">
+              <a href="#" class="social-icon">🌐</a>
+              <a href="#" class="social-icon">🔗</a>
+          </div>
+      </div>
+
+      <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img">
+          <h3 class="name">Olivia Moore</h3>
+          <p class="role">IoT Security Expert</p>
+          <div class="social-links">
+              <a href="#" class="social-icon">🌐</a>
+              <a href="#" class="social-icon">🔗</a>
+          </div>
+      </div>
+
+      <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img">
+          <h3 class="name">Ryan Clark</h3>
+          <p class="role">Network Security Specialist</p>
+          <div class="social-links">
+              <a href="#" class="social-icon">🌐</a>
+              <a href="#" class="social-icon">🔗</a>
+          </div>
+      </div>
+  </section>
+</body>
+
+</html>
