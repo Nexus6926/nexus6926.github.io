@@ -540,34 +540,36 @@ ul#countdown li .number {
     width: 100%; /* Make each item take full width on smaller screens */
   }
 }
-
 /* Hamburger Menu Button */
 .menu-toggle {
-  display: none;
-  font-size: 2rem;
-  color: #fff;
+  display: none; /* Hidden by default for larger screens */
+  font-size: 2rem; /* Large and tappable size */
+  color: #fff; /* Matches your header text color */
   background: none;
   border: none;
   cursor: pointer;
+  position: absolute; /* Positioned relative to the header */
+  top: 10px; /* Adjusts the vertical placement */
+  right: 10px; /* Aligns it to the right corner */
+  z-index: 1000; /* Ensures it’s above other elements */
 }
 
-/* Responsive Navigation */
+/* Show Hamburger Button on Smaller Screens */
 @media (max-width: 768px) {
   .menu-toggle {
-      display: block;
+      display: block; /* Make it visible for phones/tablets */
   }
 
   .header-nav-wrap {
-      display: none; /* Hide the navigation menu initially */
+      display: none; /* Navigation initially hidden */
       flex-direction: column;
-      background: #333; /* Ensure visibility on small screens */
       position: absolute;
-      top: 60px; /* Below the header */
-      right: 20px;
-      width: 200px;
-      border-radius: 10px;
-      padding: 10px;
-      z-index: 1000;
+      top: 50px; /* Below the header/menu button */
+      right: 10px; /* Align with the menu button */
+      background: #333; /* Consistent with header background */
+      width: 200px; /* Fixed width for the dropdown */
+      border-radius: 5px;
+      z-index: 999; /* Stacks above other content */
   }
 
   .header-nav-wrap.show {
