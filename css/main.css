@@ -10,6 +10,49 @@ html {
   }
 }
 
+@media (max-width: 768px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-nav-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+  .header-main-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media only screen and (max-width: 1024px) {
+  .home-content h1 {
+    font-size: 5.5rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .home-content h1 {
+    font-size: 4.5rem;
+  }
+}
+
+
 /* General Reset */
 body {
   margin: 0;
