@@ -51,6 +51,7 @@ body {
     width: 2px;
     background: #909090;
     transform: translateX(-50%);
+    z-index: 1; /* Keep the line behind the event content */
 }
 
 .timeline li {
@@ -93,7 +94,7 @@ body {
     color: #ffffff;
     text-align: left;
     position: relative;
-    z-index: 1;
+    z-index: 2; /* Make sure the event content is above the line */
 }
 
 .event-content .date {
@@ -118,21 +119,27 @@ body {
     margin-left: 60px;
 }
 
-/* Media Query for Responsiveness */
+/* Media Query for Mobile View */
 @media (max-width: 768px) {
+    /* Remove the line and hexagons in mobile view */
     .timeline::before {
-        left: 50%;
+        display: none; /* Hides the vertical line on mobile */
     }
 
-    .event-content {
-        width: 80%;
+    .hexagon {
+        display: none; /* Hides the hexagons on mobile */
+    }
+
+    /* Adjust event content layout */
+    .date, .description {
         margin: 10px auto;
-        text-align: center;
+        text-align: center; /* Aligns text to center */
+        z-index: 2; /* Keep the event content above the line */
     }
 
+    /* Ensure proper alignment in mobile view */
     .timeline li:nth-child(odd) .event-content,
     .timeline li:nth-child(even) .event-content {
         margin: 10px auto;
     }
 }
-
