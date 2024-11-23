@@ -133,6 +133,48 @@ body {
 /* -------------------------------------------------------------------
 * ## header logo
 * ------------------------------------------------------------------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+.header-logo img {
+  width: auto; /* Keep the aspect ratio */
+  max-width: 100%; /* Allow it to scale dynamically */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Navigation Menu */
+.header-nav-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-main-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-main-nav li {
+  margin: 0;
+}
+
+.header-main-nav a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+
 .header-logo {
   z-index: 601;
   display: inline-block;
@@ -496,5 +538,73 @@ ul#countdown li .number {
   ul#countdown li {
     margin: 10px 0;
     width: 100%; /* Make each item take full width on smaller screens */
+  }
+}
+
+/* Hamburger Menu Button */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .menu-toggle {
+      display: block;
+  }
+
+  .header-nav-wrap {
+      display: none; /* Hide the navigation menu initially */
+      flex-direction: column;
+      background: #333; /* Ensure visibility on small screens */
+      position: absolute;
+      top: 60px; /* Below the header */
+      right: 20px;
+      width: 200px;
+      border-radius: 10px;
+      padding: 10px;
+      z-index: 1000;
+  }
+
+  .header-nav-wrap.show {
+      display: flex; /* Show the menu when toggled */
+  }
+
+  .header-main-nav {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .header-main-nav a {
+      padding: 10px 20px; /* Adjust padding for better tap targets */
+      font-size: 1.8rem; /* Slightly larger for readability */
+  }
+}
+
+body {
+  font-size: 1.8rem; /* Default size for large devices */
+  line-height: 1.6;
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  body {
+      font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+      font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+      font-size: 1.2rem;
   }
 }
