@@ -15,12 +15,13 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 4rem 1rem;
-    color: white;
 }
 
 .about h1 {
     margin: 0;
     font-size: 4.5rem;
+    color: white;
+
 }
 
 .about p {
