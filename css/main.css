@@ -1,152 +1,67 @@
 @charset "UTF-8";
 
+/* General font size adjustment */
 html {
   font-size: 10px;
 }
 
-@media only screen and (max-width:400px) {
-  html {
-    font-size: 9.444444444444444px;
-  }
-}
-
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   html {
     font-size: 9px;
   }
 }
 
-@media (max-width: 400px) {
+@media only screen and (max-width: 400px) {
   html {
     font-size: 8px;
   }
 }
 
-@media (max-width: 768px) {
-  .header-nav-wrap {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 20px;
-  }
-  .header-main-nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-@media only screen and (max-width: 1024px) {
-  .home-content h1 {
-    font-size: 5.5rem;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .home-content h1 {
-    font-size: 4.5rem;
-  }
-}
-
-
 /* General Reset */
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: url('../images/background.png') no-repeat center center fixed; /* Sets the background image */
-  background-size: cover; /* Ensures the background covers the entire page */
-  color: #ffffff;
-}
-
-body {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.8rem;
-  font-style: normal;
   font-weight: normal;
   line-height: 1.778;
   color: #545454;
-  margin: 0;
+  background: url('../images/background.png') no-repeat center center fixed;
+  background-size: cover;
   padding: 0;
 }
 
-/* Navigation Styles */
-
-.header-nav-wrap {
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 600;
-  padding-left: 400px;
-  display: flex;
-  align-items: center;
-}
-
-.header-nav-wrap .header-main-nav {
-  display: inline-block;
-  list-style: none;
-  font-weight: 400;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin: 0;
-}
-
-.header-nav-wrap .header-main-nav li {
-  display: inline-block;
-  padding-left: 0;
-  margin-right: 1.6rem;
-}
-
-.header-nav-wrap .header-main-nav li a {
-  display: block;
-  line-height: 78px;
-  color: rgba(255, 255, 255, 0.5);
-  outline: none;
-  position: relative;
-}
-
-.header-nav-wrap .header-main-nav li a:hover,
-.header-nav-wrap .header-main-nav li a:focus {
-  color: #ffffff;
-}
-
-.header-nav-wrap .header-main-nav li.current a {
-  color: #ffffff;
-}
-
-.header-nav-wrap .header-cta {
-  transform: translate3d(0, -50%, 0);
-  position: absolute;
-  right: 40px;
-  top: 50%;
-}
-
-.header-nav-wrap .header-cta__btn {
-  font-size: 1.2rem;
-  height: 5.2rem;
-  line-height: 4.8rem;
-  margin: 0;
-}
-
-/* -------------------------------------------------------------------
-* ## header logo
-* ------------------------------------------------------------------- */
+/* Header Styles */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #333;
   color: #fff;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Header Logo */
+.header-logo {
+  display: flex;
+  align-items: center;
 }
 
 .header-logo img {
-  width: auto; /* Keep the aspect ratio */
-  max-width: 100%; /* Allow it to scale dynamically */
-  height: auto; /* Maintain aspect ratio */
+  width: auto;
+  max-width: 80%;
+  height: auto;
 }
+
+@media (max-width: 768px) {
+.header-logo img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+}
+
 
 /* Navigation Menu */
 .header-nav-wrap {
@@ -174,45 +89,67 @@ body {
   font-weight: 600;
 }
 
-
-.header-logo {
-  z-index: 601;
-  display: inline-block;
-  margin: 6px 0 0 0;
-  padding: 0;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -webkit-transform: translate3d(0, -50%, 0);
-  -ms-transform: translate3d(0, -50%, 0);
-  transform: translate3d(0, -50%, 0);
-  position: absolute;
-  left: 2%;
-  top: 6%;
-}
-
-.header-logo a {
-  display: inline-block;
-  padding: 0;
-  outline: 0;
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  background: none;
   border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
 }
 
-.header-logo img {
-  width: 300px;
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .header-nav-wrap {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    width: 200px;
+    border-radius: 5px;
+    z-index: 999;
+  }
+
+  .header-nav-wrap.show {
+    display: flex;
+  }
+
+  .header-main-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-main-nav a {
+    padding: 10px 20px;
+    font-size: 1.8rem;
+  }
+
+  .header-logo img {
+    max-width: 120px;
+  }
 }
 
+/* Home Content */
 
-/* ------------------------------------------------------------------- 
- * ## home content
- * ------------------------------------------------------------------- */
- 
 .home-content {
   z-index: 4;
-  height: 45vh;
-  display: table-cell;
-  padding-top: 24.8rem;
+  height: 500px; /* Adjust height for larger screens */
+  display: flex;
+  flex-direction: column; /* Stack text and image vertically */
+  padding-top: 4rem; /* Adjust padding for mobile */
   width: 100%;
   position: relative;
+  justify-content: center; /* Center content */
+  align-items: flex-start; /* Align to the left */
 }
 
 .home-content h1 {
@@ -227,23 +164,13 @@ body {
   position: relative;
 }
 
-.home-content h1::before {
-  display: block;
-  content: "";
-  height: 2px;
-  width: 8rem;
-  background-color: #c10404;
-  position: absolute;
-  left: 8px;
-  top: 0;
-}
+
 
 .home-content h3 {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 300;
   font-size: 2.4rem;
   line-height: 1.667;
-  font-style: normal;
   color: rgba(255, 255, 255, 0.3);
   margin-top: 2rem;
   width: 85%;
@@ -256,32 +183,88 @@ body {
 }
 
 .home-content__left {
-  width: calc(100% - (580px + 80px)); 
+  width: calc(100% - (580px + 80px)); /* Adjust based on image width */
   position: relative;
-  top: -120px; 
-  padding-left: 5rem; 
+  top: -10px;
+  padding-left: 0rem;
+  display: flex; /* Flexbox to center text */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center; /* Vertically center content */
+  align-items: center; /* Horizontally center content */
+  text-align: center; /* Ensure text is centered */
+}
+
+.home-content__left h4{
+  text-align: left;
+  padding-left: 40px;
+}
+
+.home-content__left p{
+  text-align: left;
+  padding-left: 40px; /* Ensure text is centered */
 }
 
 .home-content__right {
-  z-index: 500;
   width: 580px;
+  height: auto; /* Maintains aspect ratio */
+  object-fit: cover;
+  max-width: 100%;
+  display: block;
   position: absolute;
-  right: 100px;
+  right: 0;
   top: 0;
 }
 
 .home-content__right img {
-  max-width: 100%; /* Ensures the image scales to fit the container's width */
-  height: auto; /* Maintains the aspect ratio */
-  display: block; /* Removes inline gaps caused by images */
-  object-fit: cover; /* Ensures the image covers the container if it's larger */
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
+/* Adjust layout for Mobile Devices */
+@media (max-width: 768px) {
+  .home-content {
+    flex-direction: column; /* Stack text and image vertically */
+    padding-top: 4rem; /* Adjust padding */
+    height: auto; /* Remove fixed height for mobile */
+  }
 
-/* ===================================================================
- * # footer
- *
- * ------------------------------------------------------------------- */
+  .home-content__left {
+    width: 100%; /* Full width for text */
+    top: 0;
+    padding-left: 0; /* Remove padding for mobile */
+    padding-top: 2rem; /* Adjust padding */
+    text-align: center; /* Center the text horizontally */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Ensure text is centered horizontally */
+  }
+
+  .home-content__left p,h4{
+    width: 100%; /* Full width for text */
+    top: 0;
+    padding-left: 0; /* Remove padding for mobile */
+    padding-top: 2rem; /* Adjust padding */
+    text-align: center; /* Center the text horizontally */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Ensure text is centered horizontally */
+  }
+
+  .home-content__right {
+    width: 100%; /* Image should take full width */
+    position: relative;
+    right: 0;
+    top: 0;
+    margin-top: 2rem; /* Add space between text and image */
+  }
+
+  .home-content__right img {
+    width: 100%; /* Ensure the image scales properly */
+    object-fit: contain; /* Ensure the image is contained without cropping */
+  }
+}
+
+/* Footer Styles */
 .s-footer {
   padding-top: 9.4rem;
   padding-bottom: 4.8rem;
@@ -299,31 +282,38 @@ body {
   color: #c10404;
 }
 
+/* Footer bottom section */
 .footer__bottom {
   display: flex;
-  flex-wrap: wrap; /* Ensures responsiveness when the screen size is reduced */
-  justify-content: space-between; /* Distributes space between the columns */
-  gap: 1rem; /* Reduces space between the divs */
+  flex-wrap: wrap; /* Allows content to wrap if necessary */
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .footerleft,
 .footer__site-links,
 .footer__contact {
-  flex: 1; /* Ensures all three sections take equal width */
-  box-sizing: border-box; /* Ensures padding/margins are considered inside the width */
-  display: flex; /* Flexbox applied to allow equal height */
-  flex-direction: column; /* Stacks content vertically */
-  height: 100%; /* Makes all divs have the same height */
-  padding-right: 10rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  height: 100%;
+  text-align: center; /* Ensure the text is centered */
 }
 
+.footer__site-links{
+  text-align: left;
+}
 .footerleft {
-  padding-left: 5rem;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .footer__social {
   list-style: none;
   padding: 0;
+  text-align: left; /* Center the social media icons */
 }
 
 .footer__social li {
@@ -338,7 +328,8 @@ body {
 
 .footer__site-links,
 .footer__contact {
-  padding-left: 10px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .footer__site-links li,
@@ -346,25 +337,52 @@ body {
   margin-bottom: 1rem;
 }
 
-/* Adjust padding to bring Site Links and Contact Us divs closer */
 .footer__site-links {
-  padding-left: 0; /* Reduce or remove padding for closer spacing */
+  padding-left: 0;
 }
 
 .footer__contact {
-  padding-left: 0; /* Reduce or remove padding for closer spacing */
+  padding-left: 0;
 }
 
+/* Mobile View - Center the footer content */
 @media (max-width: 768px) {
   .footer__bottom {
-    flex-direction: column; /* Stack the sections on smaller screens */
-    gap: 1.5rem; /* Adjust the gap between stacked sections */
+    flex-direction: column; /* Stack footer items vertically */
+    justify-content: center;
+    align-items: center; /* Center the content horizontally and vertically */
+    gap: 2rem; /* Add space between stacked sections */
+  }
+
+  .footerleft,
+  .footer__contact {
+    max-width: 100%; /* Ensure each section takes full width */
+    padding-right: 0; /* Remove padding */
+    padding-left: 0; /* Remove padding */
+    text-align: center; /* Center the text within each section */
+  }
+
+  .footer__site-links{
+    max-width: 100%; /* Ensure each section takes full width */
+    padding-right: 0; /* Remove padding */
+    padding-left: 0; /* Remove padding */
+    text-align: left;
+
   }
   
-  .footerleft,
-  .footer__site-links,
-  .footer__contact {
-    max-width: 100%; /* Make each section take full width on small screens */
+  .footer__site-links h4{
+    padding-right: 50px;
+  }
+  
+  .footer__contact h4{
+    padding-right: 11px;
+  }
+  .footerleft {
+    padding-left: 0;
+  }
+
+  .footer__social {
+    text-align: center; /* Center social media icons */
   }
 }
 
@@ -417,14 +435,10 @@ body {
   margin-top: 0;
   margin-bottom: 1.6rem;
   color: #ffffff;
-  padding-left: 30px; /* Remove any unnecessary left padding */
+  padding-left: 30px;
 }
 
-
-
-/* ------------------------------------------------------------------- 
- * ## footer site links
- * ------------------------------------------------------------------- */
+/* Footer Site Links */
 .footer__site-links {
   list-style: none;
   margin: 0;
@@ -450,17 +464,14 @@ body {
   color: #c10404;
 }
 
-
-/* ------------------------------------------------------------------- 
- * ## copyright
- * ------------------------------------------------------------------- */
+/* Copyright */
 .ss-copyright {
   margin-top: 4.8rem;
   text-align: center;
 }
 
 .ss-copyright span {
-  font-size: 17px;
+  font-size: 12px;
   line-height: 3.2rem;
   display: inline-block;
 }
@@ -477,136 +488,69 @@ body {
 }
 
 
-
-/*---------------------------------
-   *## Clock
------------------------------------*/
-
-/*---------------------------------
- * ## Countdown Clock Styles
------------------------------------*/
-
-html {
-  box-sizing: border-box;
-}
-
+/* Countdown Styles */
 ul#countdown {
-  display: flex; /* Use flexbox to align items horizontally */
-  padding-left: 50px; /* Adds 5px padding from the left */
+  display: flex;
+  padding-left: 50px;
   color: #fff;
   font-family: 'Arial Narrow', Arial, sans-serif;
   font-weight: bold;
-  width: 80%; /* You can adjust the width as needed */
+  width: 40%;
+  justify-content: flex-start; /* Align countdown items to the left */
+  margin-top: 1.5rem; /* Add some space between the heading and the countdown */
+  list-style: none; /* Remove default list styling (dots) */
 }
 
 ul#countdown li {
   margin: 0 10px; /* Space between each countdown item */
   text-align: center;
+  background: rgba(0, 0, 0, 0.5); /* Transparent background with slight darkening */
+  border-radius: 5px;
+  width: calc(25% - 20px); /* Adjust width for large screens */
 }
 
 ul#countdown .number {
-  font-size: 72px; /* Adjust based on screen size */
-  font-size: 6vw; /* Responsive sizing */
+  font-size: 12px;
+  color: #c10404;
+  font-size: 3vw; /* Responsive font size */
   display: block;
 }
 
 ul#countdown .label {
-  font-size: 18px; /* Label size */
+  font-size: 18px;
   text-transform: uppercase;
-  margin-top: 5px; /* Adds spacing between number and label */
+  margin-top: 5px;
   font-size: 1.5vw;
+  margin-bottom: 0; /* Ensure no extra space under the label */
 }
-
-/* Add a border around each item for styling */
-ul#countdown li {
-  padding: 15px;
-  background: rgba(0, 0, 0, 0.5); /* Transparent background with slight darkening */
-  border-radius: 5px;
-}
-
-ul#countdown li .number {
-  font-size: 3rem; /* Ensure number size is readable */
-  color: #c10404; /* Countdown number color */
-}
-
+/* Mobile View Adjustments */
 @media (max-width: 768px) {
+  .home-content {
+    flex-direction: column;
+    padding-top: 2rem;
+    align-items: flex-start; /* Align content to the left */
+  }
+
   ul#countdown {
-    flex-direction: column; /* Stack items vertically on small screens */
-    width: 100%;
+    width: 100%; /* Make countdown container full width */
+    padding-left: 10px; /* Add padding from the left side */
+    justify-content: flex-start; /* Align countdown items to the left */
+    margin-top: 2rem;
   }
 
   ul#countdown li {
-    margin: 10px 0;
-    width: 100%; /* Make each item take full width on smaller screens */
-  }
-}
-/* Hamburger Menu Button */
-.menu-toggle {
-  display: none; /* Hidden by default for larger screens */
-  font-size: 2rem; /* Large and tappable size */
-  color: #fff; /* Matches your header text color */
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: absolute; /* Positioned relative to the header */
-  top: 10px; /* Adjusts the vertical placement */
-  right: 10px; /* Aligns it to the right corner */
-  z-index: 1000; /* Ensures it’s above other elements */
-}
-
-/* Show Hamburger Button on Smaller Screens */
-@media (max-width: 768px) {
-  .menu-toggle {
-      display: block; /* Make it visible for phones/tablets */
-  }
-
-  .header-nav-wrap {
-      display: none; /* Navigation initially hidden */
-      flex-direction: column;
-      position: absolute;
-      top: 50px; /* Below the header/menu button */
-      right: 10px; /* Align with the menu button */
-      background: #333; /* Consistent with header background */
-      width: 200px; /* Fixed width for the dropdown */
-      border-radius: 5px;
-      z-index: 999; /* Stacks above other content */
-  }
-
-  .header-nav-wrap.show {
-      display: flex; /* Show the menu when toggled */
-  }
-
-  .header-main-nav {
-      flex-direction: column;
-      gap: 10px;
-  }
-
-  .header-main-nav a {
-      padding: 10px 20px; /* Adjust padding for better tap targets */
-      font-size: 1.8rem; /* Slightly larger for readability */
+    width: calc(50% - 20px); /* Each countdown item takes 50% of the width on mobile */
+    margin: 10px 0; /* Adjust spacing between items */
   }
 }
 
-body {
-  font-size: 1.8rem; /* Default size for large devices */
-  line-height: 1.6;
-  color: #fff;
-}
-
-@media (max-width: 1024px) {
-  body {
-      font-size: 1.6rem;
+@media (max-width: 480px) {
+  ul#countdown li {
+    width: calc(100% - 20px); /* Each countdown item takes full width on very small screens */
   }
-}
 
-@media (max-width: 768px) {
-  body {
-      font-size: 1.4rem;
+  ul#countdown .number {
+    font-size: 10vw; /* Even larger font size on smaller screens */
   }
-}
-
-@media (max-width: 400px) {
-  body {
-      font-size: 1.2rem;
-  }
+  
 }
