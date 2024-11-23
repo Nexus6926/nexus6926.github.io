@@ -41,3 +41,8 @@ var secondsElement = document.getElementById('seconds');
 
 // Start the countdown when the page loads
 var countdownInterval = setInterval(updateCountdown, 1000); // Update every second
+
+
+document.querySelector('.menu-toggle').addEventListener('click', function () {
+  document.querySelector('.header-nav-wrap').classList.toggle('show');
+});

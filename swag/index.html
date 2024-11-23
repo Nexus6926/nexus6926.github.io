@@ -1,17 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About-us</title>
-    <!-- Link to the external CSS file -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <script src="/scripts/script.js" defer></script>
-    <script src="/scripts/toggle.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YC8JWDXN1J"></script>
+    <title>Swag - Threat Hunting Village</title>
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/swag.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="./js/scripts.js" defer></script>
+    <script src="../scripts/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -40,11 +41,26 @@
         </div>
     </header>
 
-    <section class="about">
-        <h1 class="title">About-us</h1>
-        <p class="subtitle">The Threat Hunting Village is a community-focused initiative designed to bring together cybersecurity professionals and enthusiasts. Our mission is to empower individuals with the knowledge and skills to proactively defend against cyber threats.</p>
-    </section>
-
+    <div class="hero">
+        <div class="grid-overlay"></div>
+        <canvas class="particles" id="particles"></canvas>
+        <div class="content">
+            <h1 class="hero" data-text="5W4G">Swag</h1>
+            <div class="spacer"></div>
+            <p style="color: #808080;">Explore a collection of exclusive stickers and other collectible swag that you can earn during the event. Complete various challenges in our villages to win these unique items, which serve as fun reminders of your participation and accomplishments. Get ready to collect and showcase your swag!</p>
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+            <div class="swag-grid" id="swag-grid"></div>
+        </div>
+    </div>
+                <div class="progress-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
     <footer class="s-footer">
         <div class="row section-header align-center">
             <div class="col-full">
@@ -95,5 +111,6 @@
         </div>
     </footer>
 
+    <script src="./js/swag.js"></script>
 </body>
 </html>

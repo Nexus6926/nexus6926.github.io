@@ -1,0 +1,128 @@
+:root {
+    --neon-red: #d30505;
+    --dark-bg: #050505;
+    --accent-color: var(--neon-pink);
+    --modal-bg: rgba(5, 5, 5, 0.95);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: white;
+    overflow-x: hidden;
+}
+
+.hero {
+    min-height: 10vh;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: rem;
+}
+
+
+
+.content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+.hero h1 {
+  font-size: clamp(2rem, calc(7vw + 3.5vh), 5rem);
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: -10rem; /* Adjust this value to move the h1 up */
+  position: relative; /* Ensures proper positioning if further adjustments are needed */
+}
+
+
+.hero p{
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px var(--neon-red), 0 0 20px var(--neon-red);
+    }
+    to {
+        text-shadow: 0 0 20px var(--neon-red), 0 0 30px var(--neon-red);
+    }
+}
+
+.villages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.village-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.village-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(0, 243, 255, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.village-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-red);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+}
+
+.village-card:hover::before {
+    opacity: 1;
+}
+
+.village-card p {
+    color: #808080; /* Light grey color */
+}
+
+.village-icon {
+    font-size: 2rem;
+    color: var(--neon-red);
+    margin-bottom: 1rem;
+}
+
+.village-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+
+@media (max-width: 768px) {
+.hero h1,p {
+    text-align: center;
+  }
+}
