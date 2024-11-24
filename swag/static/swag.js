@@ -1,22 +1,22 @@
 const swagData = [
     {
         name: "Sticker",
-        image: "st.png",
-        description: "Check out this Incredible sticker by Threat Hunting Village,designed by bla bla........."
+        image: "./static/media/st.png",
+        description: "Check out this Incredible sticker "
     },
     {
         name: "Sticker",
-        image: "st.png",
+        image: "./static/media/st.png",
         description: "Check out this Incredible sticker."
     },
     {
         name: "Sticker",
-        image: "st.png",
+        image: "./static/media/st.png",
         description: "Check out this Incredible sticker."
     },
     {
         name: "Sticker",
-        image: "st.png",
+        image: "./static/media/st.png",
         description: "Check out this Incredible sticker."
     },
    
