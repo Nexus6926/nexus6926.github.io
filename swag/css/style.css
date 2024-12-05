@@ -18,16 +18,17 @@ body {
     overflow-x: hidden;
 }
 
-.hero {
+.heroo {
     min-height: 10vh;
     position: relative;
     overflow: hidden;
     padding-bottom: rem;
+    text-align: center;
 }
 
 
 
-.content {
+.contentt {
     position: relative;
     z-index: 1;
     max-width: 1200px;
@@ -41,7 +42,7 @@ body {
 
 
 
-.hero h1 {
+.heroo h1 {
   font-size: clamp(2rem, calc(7vw + 3.5vh), 5rem);
   text-transform: uppercase;
   color: #fff;
@@ -122,7 +123,7 @@ body {
 
 
 @media (max-width: 768px) {
-.hero h1,p {
+.heroo h1,p {
     text-align: center;
   }
 }

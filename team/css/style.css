@@ -1,0 +1,349 @@
+@charset "UTF-8";
+
+/* General font size adjustment */
+html {
+  font-size: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and General Page Styling */
+body {
+    
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: normal;
+  line-height: 1.778;
+  color: #545454;
+  background: url('/images/background.png') no-repeat center center fixed;
+  background-size: cover;
+  padding: 0;
+}
+
+
+/* Hero Section */
+.herok {
+    position: relative;
+    background: url('../images/background.png') no-repeat center center/cover;
+    min-height: 100vh;
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* Overlay for darkening background */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Title and Subtitle */
+.titlee {
+    font-size: 3rem;
+    font-weight: bold;
+    z-index: 2;
+    text-align: center;
+    position: relative;
+    color:  #ff0000;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Team Members Section */
+.container {
+    z-index: 2;
+    position: relative;
+    padding: 150px;
+}
+
+.team-memberss {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.member {
+  background: linear-gradient(45deg, transparent, rgba(70, 86, 87, 0.1));
+  padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+}
+
+.member-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #fff;
+}
+
+.member h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.member p {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-top: 5px;
+}
+/* Footer Styles */
+.s-footer {
+  padding-top: 9.4rem;
+  padding-bottom: 4.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  position: relative;
+}
+
+.s-footer a {
+  color: #ffffff;
+}
+
+.s-footer a:hover,
+.s-footer a:focus,
+.s-footer a:active {
+  color: #c10404;
+}
+
+/* Footer bottom section */
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap; /* Allows content to wrap if necessary */
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footerleft,
+.footer__site-links,
+.footer__contact {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  height: 100%;
+  text-align: center; /* Ensure the text is centered */
+}
+
+.footer__site-links{
+  text-align: left;
+}
+.footerleft {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.footer__social {
+  list-style: none;
+  padding: 0;
+  text-align: left; /* Center the social media icons */
+}
+
+.footer__social li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer__social li a {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.footer__site-links,
+.footer__contact {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.footer__site-links li,
+.footer__contact p {
+  margin-bottom: 1rem;
+}
+
+.footer__site-links {
+  padding-left: 0;
+}
+
+.footer__contact {
+  padding-left: 0;
+}
+
+/* Mobile View - Center the footer content */
+@media (max-width: 768px) {
+  .container {
+    z-index: 2;
+    position: relative;
+    padding: 100px;
+}
+
+  .footer__bottom {
+    flex-direction: column; /* Stack footer items vertically */
+    justify-content: center;
+    align-items: center; /* Center the content horizontally and vertically */
+    gap: 2rem; /* Add space between stacked sections */
+  }
+
+  .footerleft,
+  .footer__contact {
+    max-width: 100%; /* Ensure each section takes full width */
+    padding-right: 0; /* Remove padding */
+    padding-left: 0; /* Remove padding */
+    text-align: center; /* Center the text within each section */
+  }
+
+  .footer__site-links{
+    max-width: 100%; /* Ensure each section takes full width */
+    padding-right: 0; /* Remove padding */
+    padding-left: 0; /* Remove padding */
+    text-align: left;
+
+  }
+  
+  .footer__site-links h4{
+    padding-right: 50px;
+  }
+  
+  .footer__contact h4{
+    padding-right: 11px;
+  }
+  .footerleft {
+    padding-left: 0;
+  }
+
+  .footer__social {
+    text-align: center; /* Center social media icons */
+  }
+}
+
+.s-footer .display-1 {
+  color: #c10404;
+}
+
+.s-footer h4 {
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+  color: #ffffff;
+}
+
+.section-header.align-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.s-footer .col-full h1,
+.s-footer .col-full p {
+  margin: 0;
+}
+
+.s-footer p.lead {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.s-footer .footer__mail-link {
+  font-weight: 800;
+  color: #c10404;
+}
+
+.s-footer .footer__mail-link:hover,
+.s-footer .footer__mail-link:focus,
+.s-footer .footer__mail-link:active {
+  color: #ffffff;
+}
+
+.footer__bottom {
+  margin-top: 1.6rem;
+  padding-top: 3.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.footer__site-links h4 {
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+  color: #ffffff;
+  padding-left: 30px;
+}
+
+/* Footer Site Links */
+.footer__site-links {
+  list-style: none;
+  margin: 0;
+}
+
+.footer__site-links li {
+  padding-left: 0;
+}
+
+.footer__site-links li a {
+  display: block;
+}
+
+.footer__site-links li a,
+.footer__site-links li a:visited {
+  color: rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+
+.footer__site-links li a:hover,
+.footer__site-links li a:focus,
+.footer__site-links li a:active {
+  color: #c10404;
+}
+
+/* Copyright */
+.ss-copyright {
+  margin-top: 4.8rem;
+  text-align: center;
+}
+
+.ss-copyright span {
+  font-size: 12px;
+  line-height: 3.2rem;
+  display: inline-block;
+}
+
+.ss-copyright span::after {
+  content: "·";
+  display: inline-block;
+  padding: 0 1rem 0 1.2rem;
+  color: white;
+}
+
+.ss-copyright span:last-child::after {
+  display: none;
+}

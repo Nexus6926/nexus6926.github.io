@@ -6,17 +6,37 @@ const swagData = [
     },
     {
         name: "Sticker",
-        image: "./static/media/s2.png",
+        image: "./static/media/s3.png",
         description: "Check out this Incredible sticker."
     },
     {
         name: "Sticker",
-        image: "./static/media/s2.png",
+        image: "./static/media/s4.jpeg",
         description: "Check out this Incredible sticker."
     },
     {
         name: "Sticker",
-        image: "./static/media/s2.png",
+        image: "./static/media/s5.jpeg",
+        description: "Check out this Incredible sticker."
+    },
+    {
+        name: "Sticker",
+        image: "./static/media/s6.jpeg",
+        description: "Check out this Incredible sticker."
+    },
+    {
+        name: "Sticker",
+        image: "./static/media/s7.jpeg",
+        description: "Check out this Incredible sticker."
+    },
+    {
+        name: "Sticker",
+        image: "./static/media/s8.webp",
+        description: "Check out this Incredible sticker."
+    },
+    {
+        name: "Sticker",
+        image: "./static/media/s9.jpeg",
         description: "Check out this Incredible sticker."
     },
    

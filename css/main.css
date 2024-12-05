@@ -1,7 +1,12 @@
 @charset "UTF-8";
 
 /* General font size adjustment */
-html {
+/* Prevent horizontal scrolling */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  width: 100%;
   font-size: 10px;
 }
 
@@ -24,10 +29,51 @@ body {
   font-size: 1.8rem;
   font-weight: normal;
   line-height: 1.778;
-  color: #545454;
+  color: #ffffff;
   background: url('../images/background.png') no-repeat center center fixed;
   background-size: cover;
   padding: 0;
+}
+
+.hero {
+  position: relative;
+  height: 150vh;
+  background-size: contain;
+  background: url('../images/IMG_8321.PNG') no-repeat center center/cover;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .hero {
+  position: relative;
+  height: 100vh; /* Occupies full viewport height */
+  overflow: hidden;
+  background: url('../images/IMG_8321.PNG') no-repeat center / cover;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px; /* Add some padding for content spacing */
+  box-sizing: border-box;
+}
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Center content vertically */
+  }
 }
 
 /* Header Styles */
@@ -36,10 +82,10 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  color: #fff;
-  position: relative;
+  position: fixed;
   width: 100%;
   box-sizing: border-box;
+  z-index: 1000; /* Ensure the header is above all other elements */
 }
 
 /* Header Logo */
@@ -139,18 +185,22 @@ body {
   }
 }
 
+
+
 /* Home Content */
+
 
 .home-content {
   z-index: 4;
   height: 500px; /* Adjust height for larger screens */
   display: flex;
   flex-direction: column; /* Stack text and image vertically */
-  padding-top: 4rem; /* Adjust padding for mobile */
+  padding-top: 10rem; /* Adjust padding for mobile */
   width: 100%;
-  position: relative;
+  
   justify-content: center; /* Center content */
-  align-items: flex-start; /* Align to the left */
+  max-height: 150vh;
+  align-items: center; /* Align to the left */
 }
 
 .home-content h1 {
@@ -180,14 +230,11 @@ body {
 .home-content__main {
   position: relative;
   padding-bottom: 10rem;
-  max-width: 1300px;
 }
 
 .home-content__left {
-  width: calc(100% - (580px + 80px)); /* Adjust based on image width */
   position: relative;
   top: -10px;
-  padding-left: 0rem;
   display: flex; /* Flexbox to center text */
   flex-direction: column; /* Stack content vertically */
   justify-content: center; /* Vertically center content */
@@ -196,46 +243,36 @@ body {
 }
 
 .home-content__left h4{
-  text-align: left;
+  text-align: center;
   padding-left: 40px;
+  padding-right: 40px;
+
 }
 
 .home-content__left p{
-  text-align: left;
+  text-align: center;
   padding-left: 40px; /* Ensure text is centered */
+  padding-right: 40px;
+  box-sizing: border-box;
+  max-width: 1000px;
 }
 
-.home-content__right {
-  width: 580px;
-  height: auto; /* Maintains aspect ratio */
-  object-fit: cover;
-  max-width: 100%;
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.home-content__right img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
+.home-content__left p1{
+  text-align: center;
+  padding-left: 40px; /* Ensure text is centered */
+  padding-right: 40px;
+  box-sizing: border-box;
 }
 
 /* Adjust layout for Mobile Devices */
 @media (max-width: 768px) {
   .home-content {
     flex-direction: column; /* Stack text and image vertically */
-    padding-top: 4rem; /* Adjust padding */
     height: auto; /* Remove fixed height for mobile */
   }
 
   .home-content__left {
     width: 100%; /* Full width for text */
-    top: 0;
-    padding-left: 0; /* Remove padding for mobile */
-    padding-top: 2rem; /* Adjust padding */
     text-align: center; /* Center the text horizontally */
     justify-content: center; /* Center vertically */
     align-items: center; /* Ensure text is centered horizontally */
@@ -244,20 +281,12 @@ body {
   .home-content__left p,h4{
     width: 100%; /* Full width for text */
     top: 0;
-    padding-left: 0; /* Remove padding for mobile */
-    padding-top: 2rem; /* Adjust padding */
     text-align: center; /* Center the text horizontally */
     justify-content: center; /* Center vertically */
     align-items: center; /* Ensure text is centered horizontally */
   }
 
-  .home-content__right {
-    width: 100%; /* Image should take full width */
-    position: relative;
-    right: 0;
-    top: 0;
-    margin-top: 2rem; /* Add space between text and image */
-  }
+
 
   .home-content__right img {
     width: 100%; /* Ensure the image scales properly */
@@ -271,6 +300,7 @@ body {
   padding-bottom: 4.8rem;
   color: rgba(255, 255, 255, 0.4);
   position: relative;
+  
 }
 
 .s-footer a {
@@ -309,6 +339,7 @@ body {
 .footerleft {
   padding-left: 0;
   padding-right: 0;
+  box-sizing: border-box;
 }
 
 .footer__social {
@@ -343,7 +374,8 @@ body {
 }
 
 .footer__contact {
-  padding-left: 0;
+  padding-right: 10px;
+  box-sizing: border-box;
 }
 
 /* Mobile View - Center the footer content */
@@ -360,6 +392,7 @@ body {
     max-width: 100%; /* Ensure each section takes full width */
     padding-right: 0; /* Remove padding */
     padding-left: 0; /* Remove padding */
+    box-sizing: border-box;
     text-align: center; /* Center the text within each section */
   }
 
@@ -378,8 +411,16 @@ body {
   .footer__contact h4{
     padding-right: 11px;
   }
+  .footer__contact p{
+    padding-right: 40px;
+    padding-left: 40px;
+  }
   .footerleft {
     padding-left: 0;
+  }
+  .footerleft p{
+    padding-left: 40px;
+    padding-right: 40px;
   }
 
   .footer__social {
@@ -492,27 +533,26 @@ body {
 /* Countdown Styles */
 ul#countdown {
   display: flex;
-  padding-left: 50px;
-  color: #fff;
   font-family: 'Arial Narrow', Arial, sans-serif;
   font-weight: bold;
-  width: 40%;
-  justify-content: flex-start; /* Align countdown items to the left */
+  width: 45%;
+  justify-content: center; /* Align countdown items to the left */
   margin-top: 1.5rem; /* Add some space between the heading and the countdown */
   list-style: none; /* Remove default list styling (dots) */
+  z-index: 2; /* Place above the overlay */
 }
 
 ul#countdown li {
   margin: 0 10px; /* Space between each countdown item */
   text-align: center;
-  background: rgba(0, 0, 0, 0.5); /* Transparent background with slight darkening */
+  
+  background-color: #c10404; /* Transparent background with slight darkening */
   border-radius: 5px;
   width: calc(25% - 20px); /* Adjust width for large screens */
 }
 
 ul#countdown .number {
-  font-size: 12px;
-  color: #c10404;
+  color: #ffffff;
   font-size: 3vw; /* Responsive font size */
   display: block;
 }
@@ -521,7 +561,7 @@ ul#countdown .label {
   font-size: 18px;
   text-transform: uppercase;
   margin-top: 5px;
-  font-size: 1.5vw;
+  color: #fff;
   margin-bottom: 0; /* Ensure no extra space under the label */
 }
 /* Mobile View Adjustments */
@@ -529,13 +569,13 @@ ul#countdown .label {
   .home-content {
     flex-direction: column;
     padding-top: 2rem;
-    align-items: flex-start; /* Align content to the left */
+    align-items: center; /* Align content to the left */
   }
 
   ul#countdown {
     width: 100%; /* Make countdown container full width */
     padding-left: 10px; /* Add padding from the left side */
-    justify-content: flex-start; /* Align countdown items to the left */
+    justify-content: center; /* Align countdown items to the left */
     margin-top: 2rem;
   }
 
@@ -555,3 +595,4 @@ ul#countdown .label {
   }
   
 }
+

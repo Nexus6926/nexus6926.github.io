@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+/* General font size adjustment */
+/* Prevent horizontal scrolling */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  width: 100%;
+  font-size: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+body {
+    margin: 0;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1.8rem;
+    font-weight: normal;
+    line-height: 1.778;
+    color: #ffffff;
+    background: url('../images/background.png') no-repeat center center fixed;
+    background-size: cover;
+    padding: 0;
+}
+
+.containerr {
+    max-width: 1200px;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.txt{
+    z-index: 4;
+    height: 500px; /* Adjust height for larger screens */
+    display: flex;
+    flex-direction: column; /* Stack text and image vertically */
+    padding-top: 10rem; /* Adjust padding for mobile */
+    width: 100%;
+    justify-content: center; /* Center content */
+    max-height: 150vh;
+    align-items: center; /* Align to the left */
+}
+
+.txt h1{
+font-family: "Chivo", sans-serif;
+  font-weight: 600;
+  font-size: 6rem;
+  line-height: 1.222;
+  color: #ff0000;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 3.2rem;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+    
+    .txt h1{
+      font-family: "Chivo", sans-serif;
+      font-weight: 600;
+      font-size: 6rem;
+      line-height: 1.222;
+      color: #ff0000;
+      padding-top: 3.2rem;
+      justify-content: center; /* Center content */
+      text-align: center;
+    }
+}
