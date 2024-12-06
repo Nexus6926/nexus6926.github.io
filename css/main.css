@@ -283,6 +283,7 @@ body {
     top: 0;
     text-align: center; /* Center the text horizontally */
     justify-content: center; /* Center vertically */
+    box-sizing: border-box;
     align-items: center; /* Ensure text is centered horizontally */
   }
 
