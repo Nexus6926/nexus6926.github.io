@@ -2,42 +2,34 @@ const swagData = [
     {
         name: "Sticker",
         image: "./static/media/s2.png",
-        description: "Check out this Incredible sticker "
     },
     {
         name: "Sticker",
         image: "./static/media/s3.png",
-        description: "Check out this Incredible sticker."
     },
     {
         name: "Sticker",
         image: "./static/media/s4.jpeg",
-        description: "Check out this Incredible sticker."
     },
     {
         name: "Sticker",
         image: "./static/media/s5.jpeg",
-        description: "Check out this Incredible sticker."
     },
     {
         name: "Sticker",
         image: "./static/media/s6.jpeg",
-        description: "Check out this Incredible sticker."
     },
     {
         name: "Sticker",
         image: "./static/media/s7.jpeg",
-        description: "Check out this Incredible sticker."
     },
     {
         name: "Sticker",
         image: "./static/media/s8.webp",
-        description: "Check out this Incredible sticker."
     },
     {
         name: "Sticker",
         image: "./static/media/s9.jpeg",
-        description: "Check out this Incredible sticker."
     },
    
     
@@ -70,7 +62,7 @@ function populateSwag() {
         swagCard.innerHTML = `
             <h3>${item.name}</h3>
             <img src="${item.image}" alt="${item.name}">
-            <p>${item.description}</p>
+
         `;
         
         swagGrid.appendChild(swagCard);
